@@ -14,33 +14,7 @@ digit-recognition-cnn
 │   └── utils.py        # Utility functions for the project
 ├── requirements.txt     # Lists project dependencies
 └── README.md            # Project documentation
-```
-
-## Setup Instructions
-
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd digit-recognition-cnn
-   ```
-
-2. Install the required packages:
-   ```
-   pip install -r requirements.txt
-   ```
-
-## Usage
-
-1. To train the model, run:
-   ```
-   python src/train.py
-   ```
-
-2. To test the model, run:
-   ```
-   python src/test.py
-   ```
-
+'''
 ## Model Architecture
 
 The CNN model is defined in `src/model.py` and consists of several convolutional layers followed by fully connected layers. The architecture is designed to effectively learn features from the MNIST dataset.
@@ -53,6 +27,3 @@ The training loop is implemented in `src/train.py`, where the model is trained u
 
 The evaluation of the model is performed in `src/test.py`, where the accuracy and loss on the test dataset are computed to assess the model's performance.
 
-## License
-
-This project is licensed under the MIT License.
