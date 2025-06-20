@@ -11,7 +11,6 @@ digit-recognition-cnn
 │   ├── train.py        # Contains the training loop
 │   ├── test.py         # Evaluates the trained model
 │   ├── dataset.py      # Handles data loading and preprocessing
-│   └── utils.py        # Utility functions for the project
 ├── requirements.txt     # Lists project dependencies
 └── README.md            # Project documentation
 '''
