@@ -26,3 +26,23 @@ The training loop is implemented in `src/train.py`, where the model is trained u
 
 The evaluation of the model is performed in `src/test.py`, where the accuracy and loss on the test dataset are computed to assess the model's performance.
 
+##How it works
+#Imports:
+Uses PyTorch (torch), torchvision’s datasets and transforms, and PyTorch’s DataLoader.
+
+#Transform:
+Converts images to tensors and normalizes them to have mean 0.5 and std 0.5.
+
+Datasets:
+Downloads and loads the MNIST training and test datasets, applying the transform.
+
+DataLoaders:
+Wraps the datasets in DataLoader objects for easy batch loading during training and testing.
+
+train_loader shuffles the data for training.
+test_loader does not shuffle.
+Return:
+Returns both train_loader and test_loader for use in your training and evaluation scripts.
+
+
+
