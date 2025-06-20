@@ -4,6 +4,7 @@ from PIL import Image, ImageOps
 import torch
 from torchvision import transforms
 from model import DigitCNN
+import os
 
 st.title("Handwritten Digit Recognition (MNIST, PyTorch)")
 
@@ -30,7 +31,12 @@ canvas_result = st_canvas(
 def load_model():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = DigitCNN().to(device)
-    model.load_state_dict(torch.load("digit_cnn.pth", map_location=device))
+    # Get absolute path to model file
+    model_path = os.path.join(os.path.dirname(__file__), "digit_cnn.pth")
+    if not os.path.exists(model_path):
+        st.error(f"Model file not found at {model_path}. Please train the model and place 'digit_cnn.pth' here.")
+        st.stop()
+    model.load_state_dict(torch.load(model_path, map_location=device))
     model.eval()
     return model, device
 
@@ -55,3 +61,6 @@ if st.button("Predict"):
         st.warning("Please draw a digit before predicting.")
 
 st.write("Tip: Use your mouse or touchscreen to draw.")
+
+
+
